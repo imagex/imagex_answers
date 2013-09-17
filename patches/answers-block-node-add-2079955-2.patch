@@ -1,0 +1,17 @@
+diff --git a/answers.module b/answers.module
+index ed2364b..43209f4 100644
+--- a/answers.module
++++ b/answers.module
+@@ -140,6 +140,12 @@ function answers_form_alter(&$form, $form_state, $form_id) {
+   if ($form_id == 'answers_answer_node_form') {
+     // Disallow manually assigning an answer to a question.
+     hide($form['answers_related_question']);
++    $node = $form['#node'];
++    if (!isset($node->answers_related_question[LANGUAGE_NONE][0]['target_id'])) {
++      drupal_set_message(t('You cannot post an answer without a question.'), 'error');
++      drupal_not_found();
++      exit;
++    }
+   }
+   elseif ($form_id == 'answers_question_node_form') {
+     // Disallow manually setting the question lock.

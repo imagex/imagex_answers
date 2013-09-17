@@ -1,0 +1,7 @@
+name = Questions and Answers
+core = 7.x
+package = ImageX
+version = 7.x-1.0
+project = imagex_answers
+dependencies[] = answers
+features[features_api][] = api:1
