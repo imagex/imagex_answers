@@ -3,9 +3,7 @@
 
 Extension module enabling RSS feeds for Answers content.
 
-
 ### Dependencies
-
 
 The following listed modules and libraries below are required dependencies of this component.
 
