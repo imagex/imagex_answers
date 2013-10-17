@@ -1,0 +1,10 @@
+name = Answers RSS
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = imagex_answers_rss
+dependencies[] = imagex_rss
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = imagex_question_rss
+features_exclude[dependencies][views] = views
