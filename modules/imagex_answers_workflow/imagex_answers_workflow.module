@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Questions and Answers - Workflow feature.
+ */
+
+include_once 'imagex_answers_workflow.features.inc';
