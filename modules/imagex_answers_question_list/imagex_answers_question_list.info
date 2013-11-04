@@ -1,0 +1,16 @@
+name = imagex_answers_question_list
+description = Question & Answers Page
+core = 7.x
+package = Linux
+version = 7.x-1.0
+project = imagex_answers_question_list
+dependencies[] = quicktabs
+dependencies[] = views
+dependencies[] = views_content
+dependencies[] = imagex_answers
+features[ctools][] = quicktabs:quicktabs:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[quicktabs][] = linux_questions
+features[views_view][] = questions_all_views_
+features_exclude[dependencies][ctools] = ctools
