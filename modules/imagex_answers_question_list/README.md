@@ -10,6 +10,8 @@ The following listed modules and libraries below are required dependencies of th
 * Contrib: [Views] (https://drupal.org/project/views)  (>= 3.0)
 * Contrib: [Features] (https://drupal.org/project/features)  (>= 2.0)
 * Contrib: [QuickTabs] (https://drupal.org/project/features)  (>= 3.4)
+* Contrib: [Rate] (https://drupal.org/project/rate)  (>= 2.11)
+* Contrib: [VoteAPI] (https://drupal.org/project/VoteAPI)  (>= 1.6)
 * ImageX Component: [ImageX Answers](http://github.com/imagex/imagex_answers (>= 7.x-dev) 
 * ImageX Component: [ImageX Answers Pane](http://github.com/imagex/imagex_answers_pane (>= 7.x-dev) 
 
