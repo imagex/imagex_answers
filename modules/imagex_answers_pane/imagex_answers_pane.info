@@ -1,0 +1,12 @@
+name = Questions & Answers - Pane
+description = Provides a 'Create Question' pane for panelizer view.
+core = 7.x
+package = ImageX
+php = 5.2.4
+version = 7.x-1.0
+project = imagex_answers_pane
+dependencies[] = ctools
+dependencies[] = imagex_answers
+dependencies[] = quicktabs
+
+files[] = imagex_answers_pane.admin.inc

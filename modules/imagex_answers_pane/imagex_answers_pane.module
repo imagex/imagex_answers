@@ -1,0 +1,81 @@
+<?php
+/**
+* @file Question Pane
+*/
+function imagex_answers_pane_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/' . $plugin_type;
+  }
+}
+/***
+*
+* Display question page
+***/
+function imagex_answers_pane_content_type_render($entity_type, $conf, $panel_args, $contexts) {
+
+  $block = new stdClass();
+  $block->title = t('Ask a Question');
+
+  $block->content = drupal_get_form('imagex_answers_pane_display_form');
+  
+
+  return $block;
+}
+/***
+*
+*display question form
+***/
+function imagex_answers_pane_display_form($form, &$form_state){
+
+ 
+ $form['question_title'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#weight' => 0,
+ );
+ $form['question'] = array(
+    '#type' => 'textarea',
+    '#default_value' => 'What would you like to ask?',
+    '#weight' => 1,
+  );
+
+ //TODO: add terms reference
+
+ $form['question_submit'] = array(
+    '#type' => 'submit',
+    '#value' => array('Submit a Question'),
+    '#weight' => 3,
+    '#submit' => array('imagex_answers_pane_submit_question'),
+  );
+
+  return($form);
+
+}
+/***
+* Save entry as a question content type
+*
+***/
+function imagex_answers_pane_submit_question($form, &$form_state) {
+
+   global $user;
+
+    $values = array(
+      'type' => 'question',
+      'uid' => $user->uid,
+      'status' => 1,
+      'comment' => 1,
+      'promote' => 0,
+    );
+
+    $entity = entity_create('node', $values);
+    $ewrapper = entity_metadata_wrapper('node', $entity);
+    $ewrapper->title->set('YOUR TITLE');
+    $my_body_content = 'A bunch of text about things that interest me';
+    $ewrapper->body->set(array('value' => $my_body_content));
+    $ewrapper->body->summary->set('Things that interest me');
+
+    $ewrapper->save(true);
+    entity_save('node', $entity);
+
+
+}
