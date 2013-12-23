@@ -9,7 +9,6 @@ This component enbables content management of Question and Answer content and it
 
 ### Extension Modules
 
-* **imagex_answers_addthis*: This extension module of the Answers component integrates [AddThis](http://github.com/imagex/imagex_addthis) Social Media sharing, and its default configuration for Answer content. 
 * **imagex_answers_permissions*: This extension module of the Answers component provides default permissions for ImageX’s [User Roles](http://github.com/imagex/imagex_user_roles). These permissions meet the  requirements to be used in conjunction with the ImageX [Workflow](http://github.com/imagex/imagex_workflow).
 * **imagex_answers_workflow: This extension module integrates with the ImageX [Workflow](http://github.com/imagex/imagex_workflow) component to provide a default publishing and scheduling workflow for Answers content.
 
