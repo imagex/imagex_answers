@@ -25,8 +25,18 @@ function imagex_answers_menu() {
     'access arguments' => array('update', 3),
     'type' => MENU_CALLBACK,
   );
-  
+
   return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+*/
+function imagex_answers_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'answer_node_form') {
+    $form['title']['#type'] = 'hidden';
+    $form['title']['#default_value'] = $form['field_answer_question']['en'][0]['nid']['#title'];
+  }
 }
 
 /**
@@ -84,7 +94,7 @@ function imagex_answer_select_answer($js, $node, $answer_nid) {
     //Remove any answer forms that are on the page.
     $commands[] = ajax_command_remove('#answer-node-form-pane'); //This is the ID that should be given to panes inorder to be removed
     $commands[] = ajax_command_remove('#answer-node-form');
-    
+
     print ajax_render($commands); // this function exits.
     exit;
   }
